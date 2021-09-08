@@ -1,0 +1,117 @@
+.header {
+  background-color: green;
+}
+
+.header-dropdown,
+.header-dropdown-1,
+.header-dropdown-3 {
+  display: none;
+}
+
+.header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 3rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.header-items {
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 0.8rem 0;
+  list-style: none;
+  -webkit-transition: all 0.2s 60s;
+  transition: all 0.2s 60s;
+}
+
+.header-items:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.header-items:hover .header-dropdown {
+  display: block;
+  background-color: darkgreen;
+  position: absolute;
+  list-style: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.header-items:hover .header-dropdown li {
+  padding: 1rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.header-drop-2:hover .header-dropdown-1,
+.header-drop-2:hover .header-dropdown-3 {
+  display: inline-block;
+  margin-left: 1.4rem;
+  padding: 1rem;
+  position: absolute;
+  background: darkgreen;
+  width: 60%;
+}
+
+.header-logo {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+}
+
+.header-link {
+  display: inline-block;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.header-link:visited,
+.header-link:link {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.header-link:hover,
+.header-link:active {
+  -webkit-transform: translateY(-0.1rem);
+  transform: translateY(-0.1rem);
+  background-color: white;
+  color: white;
+  color: orangered;
+  border-radius: 0.5rem;
+}
+
+.header-linker {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.header-linker:visited,
+.header-linker:link {
+  font-size: 1rem;
+  color: white;
+}
+
+.header-linker:hover,
+.header-linker:active {
+  -webkit-transform: translateY(-0.1rem);
+  transform: translateY(-0.1rem);
+  opacity: 0.7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+/*# sourceMappingURL=styles.css.map */
