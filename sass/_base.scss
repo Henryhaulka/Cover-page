@@ -4,5 +4,17 @@
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: black;
+}
+
+.video {
+  object-fit: cover;
+  width: 100%;
+ 
+  opacity: 0.4;
+  
 }

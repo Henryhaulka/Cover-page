@@ -1,12 +1,14 @@
 .header {
-  background-color: green;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   &-list {
   }
 
   &-dropdown,
-  &-dropdown-1,
-  &-dropdown-3 {
+  &-dropdown-1 {
     display: none;
   }
 
@@ -27,34 +29,28 @@
       margin-right: 3rem;
     }
   }
-
+  &-sub:hover &-dropdown-1,
   &-items:hover &-dropdown {
-    display: block;
-    background-color: rgb(0, 100, 0);
+    background-color: transparent;
     position: absolute;
     list-style: none;
     display: block;
     padding: 0;
     margin: 0;
-
-    ul {
-    }
+    border-radius: 2px;
 
     li {
-      padding: 1rem;
-      color: $white;
-      font-size: 1rem;
+      padding: 1.5rem;
+      margin: 0 1.5rem;
+     &:not(:last-child) {border-bottom: 0.5px solid rgba(255, 255, 255, 0.767);}
+      
     }
   }
 
-  &-drop-2:hover &-dropdown-1,
-  &-drop-2:hover &-dropdown-3 {
+  &-sub:hover &-dropdown-1 {
+    margin-left: 2rem; 
     display: inline-block;
-    margin-left: 1.4rem;
-    padding: 1rem;
-    position: absolute;
-    background: rgb(0, 100, 0);
-    width: 60%;
+    width: 80%;
   }
 
   &-logo {
@@ -84,13 +80,13 @@
       color: orangered;
       border-radius: 0.5rem;
     }
-  }
+  }   
 
   &-linker {
     display: inline-block;
-
+    transition: all 0.2s ease-out;
     text-decoration: none;
-    // padding: 0.3rem;
+   
 
     &:visited,
     &:link {
@@ -101,7 +97,7 @@
     &:hover,
     &:active {
       transform: translateY(-0.1rem);
-      opacity: 0.7;
+       opacity: 0.7;
     }
-  }
+  }   
 }
