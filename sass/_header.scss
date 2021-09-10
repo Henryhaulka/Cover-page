@@ -150,6 +150,7 @@
     top: 0;
     width: 100%;
     justify-content: space-between;
+    z-index: 10;
 
     &-header {
       width: 100%;
@@ -228,10 +229,15 @@
     &-input:checked ~ &-header {
       opacity: 1;
       visibility: visible;
-      background-color: #00a98dc2;
+      background-color: black;
     }
+
     &-input:checked + &-label &-span {
       background-color: transparent;
+    }
+
+    &-input:checked ~ &-background {
+      transform: scale(80);
     }
 
     &-input:checked + &-label &-span::before {
@@ -249,4 +255,8 @@
       top: 0;
     }
   }
+}
+
+.input:checked ~ .nav-phone {
+  display: none;
 }

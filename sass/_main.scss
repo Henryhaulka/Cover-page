@@ -27,12 +27,13 @@
     letter-spacing: 1.5rem;
     text-transform: uppercase;
     font-family: Georgia, serif;
-    background: linear-gradient(bottom left, #5c0faa, #00a98e);
+    background: linear-gradient(to left, #5c0faa, #00a98e);
     -webkit-background-clip: text;
     animation: move 3s 2 ease-in-out;
     @include respond(phone) {
       letter-spacing: 1rem;
       font-size: 5rem;
+      animation: none;
     }
 
     @include respond(big) {

@@ -190,6 +190,7 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    z-index: 10;
   }
   .nav-phone-header {
     width: 100%;
@@ -259,10 +260,14 @@
   .nav-phone-input:checked ~ .nav-phone-header {
     opacity: 1;
     visibility: visible;
-    background-color: #00a98dc2;
+    background-color: black;
   }
   .nav-phone-input:checked + .nav-phone-label .nav-phone-span {
     background-color: transparent;
+  }
+  .nav-phone-input:checked ~ .nav-phone-background {
+    -webkit-transform: scale(80);
+            transform: scale(80);
   }
   .nav-phone-input:checked + .nav-phone-label .nav-phone-span::before {
     -webkit-transform: rotate(135deg);
@@ -278,6 +283,10 @@
             transform: rotate(-135deg);
     top: 0;
   }
+}
+
+.input:checked ~ .nav-phone {
+  display: none;
 }
 
 * {
@@ -380,8 +389,8 @@ body {
   letter-spacing: 1.5rem;
   text-transform: uppercase;
   font-family: Georgia, serif;
-  background: -webkit-gradient(linear, left bottom, right top, from(#5c0faa), to(#00a98e));
-  background: linear-gradient(bottom left, #5c0faa, #00a98e);
+  background: -webkit-gradient(linear, right top, left top, from(#5c0faa), to(#00a98e));
+  background: linear-gradient(to left, #5c0faa, #00a98e);
   -webkit-background-clip: text;
   -webkit-animation: move 3s 2 ease-in-out;
           animation: move 3s 2 ease-in-out;
@@ -391,6 +400,8 @@ body {
   .center-header {
     letter-spacing: 1rem;
     font-size: 5rem;
+    -webkit-animation: none;
+            animation: none;
   }
 }
 
