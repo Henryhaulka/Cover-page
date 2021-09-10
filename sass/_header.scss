@@ -3,8 +3,8 @@
   position: fixed;
   top: 0;
   width: 100%;
-
-  &-list {
+  @include respond(phone) {
+    display: none;
   }
 
   &-dropdown,
@@ -12,11 +12,22 @@
     display: none;
   }
 
+  &-list {
+    padding: 0;
+    margin: 0;
+    display: inline;
+    list-style: none;
+  }
+
   &-nav {
     display: flex;
     padding: 1rem 3rem;
     justify-content: space-between;
     text-align: center;
+
+    @include respond(tablet) {
+      padding: 1rem;
+    }
   }
   &-items {
     display: inline-block;
@@ -25,10 +36,20 @@
     list-style: none;
     transition: all 0.2s 60s;
 
+    @include respond(phone) {
+      display: block;
+      text-align: center;
+    }
+
     &:not(:last-child) {
       margin-right: 3rem;
+
+      @include respond(tablet) {
+        margin-right: 0;
+      }
     }
   }
+
   &-sub:hover &-dropdown-1,
   &-items:hover &-dropdown {
     background-color: transparent;
@@ -38,17 +59,22 @@
     padding: 0;
     margin: 0;
     border-radius: 2px;
+    @include respond(phone) {
+      display: inline-block;
+      font-size: 1rem;
+    }
 
     li {
       padding: 1.5rem;
       margin: 0 1.5rem;
-     &:not(:last-child) {border-bottom: 0.5px solid rgba(255, 255, 255, 0.767);}
-      
+      &:not(:last-child) {
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.767);
+      }
     }
   }
 
   &-sub:hover &-dropdown-1 {
-    margin-left: 2rem; 
+    margin-left: 2rem;
     display: inline-block;
     width: 80%;
   }
@@ -57,6 +83,13 @@
     width: 5rem;
     height: 5rem;
     border-radius: 1rem;
+    @include respond(big) {
+      width: 12rem;
+      height: 12rem;
+    }
+     @include respond(phone) {
+       margin-left: 8px;
+     }
   }
 
   &-link {
@@ -69,35 +102,153 @@
     &:link {
       font-size: 1.5rem;
       color: $white;
+      @include respond(big) {
+        font-size: 3rem;
+        margin-top: 2rem;
+      }
     }
 
     &:hover,
     &:active {
       transform: translateY(-0.1rem);
-      background-color: $white;
-
+      border-bottom: 1px solid #008e9b;
+      box-shadow: 2px 4px 4px #008e9b;
       color: $white;
       color: orangered;
       border-radius: 0.5rem;
     }
-  }   
+  }
 
   &-linker {
     display: inline-block;
     transition: all 0.2s ease-out;
     text-decoration: none;
-   
 
     &:visited,
     &:link {
       font-size: 1rem;
       color: $white;
+      @include respond(big) {
+        font-size: 3rem;
+      }
     }
 
     &:hover,
     &:active {
       transform: translateY(-0.1rem);
-       opacity: 0.7;
+      opacity: 0.7;
     }
-  }   
+  }
+}
+
+.nav-phone {
+  display: none;
+
+  @include respond(phone) {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+
+    &-header {
+      width: 100%;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.2s;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    &-item {
+      display: block;
+      text-align: center;
+      margin: 1.5rem 1rem;
+    }
+
+    
+
+    &-link {
+      font-size: 2rem;
+      text-decoration: none;
+      
+      color: $white;
+      text-transform: capitalize;
+
+      &:hover,
+      &:active {
+        transform: translateY(-0.1rem);
+        border-bottom: 1px solid #008e9b;
+        box-shadow: 2px 4px 4px #008e9b;
+        color: $white;
+        color: orangered;
+        border-radius: 0.5rem;
+      }
+    }
+
+    &-input {
+      display: none;
+    }
+
+    &-label {
+      height: 4rem;
+      width: 4rem;
+      background-color: $white;
+      margin-right: 2rem;
+      margin-top: 1rem;
+      border-radius: 1rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    &-span,
+    &-span::before,
+    &-span::after {
+      width: 2rem;
+      height: 0.2rem;
+      background-color: black;
+      display: inline-block;
+    }
+
+    &-span {
+      top: 0.4rem;
+      left: 1rem;
+      position: relative;
+    }
+
+    &-span::before {
+      top: 0.8rem;
+    }
+    &-span::before,
+    &-span::after {
+      position: absolute;
+      content: "";
+    }
+    &-span::after {
+      top: 1.7rem;
+    }
+    &-input:checked ~ &-header {
+      opacity: 1;
+      visibility: visible;
+      background-color: #00a98dc2;
+    }
+    &-input:checked + &-label &-span {
+      background-color: transparent;
+    }
+
+    &-input:checked + &-label &-span::before {
+      transform: rotate(135deg);
+      top: 0;
+    }
+
+    &-input:checked + &-label &-span::before,
+    &-input:checked + &-label &-span::after {
+      margin-top: 0.9rem;
+    }
+
+    &-input:checked + &-label &-span::after {
+      transform: rotate(-135deg);
+      top: 0;
+    }
+  }
 }
