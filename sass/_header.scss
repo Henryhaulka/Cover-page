@@ -87,9 +87,9 @@
       width: 12rem;
       height: 12rem;
     }
-     @include respond(phone) {
-       margin-left: 8px;
-     }
+    @include respond(phone) {
+      margin-left: 8px;
+    }
   }
 
   &-link {
@@ -166,12 +166,10 @@
       margin: 1.5rem 1rem;
     }
 
-    
-
     &-link {
       font-size: 2rem;
       text-decoration: none;
-      
+
       color: $white;
       text-transform: capitalize;
 
