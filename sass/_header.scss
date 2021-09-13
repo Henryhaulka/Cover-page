@@ -237,7 +237,7 @@
     &-input:checked ~ &-header {
       opacity: 1;
       visibility: visible;
-      background-color: black;
+      background-color: rgba(0, 0, 0, 0.712);
     }
 
     &-input:checked + &-label &-span {
