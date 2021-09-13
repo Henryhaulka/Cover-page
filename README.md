@@ -1,7 +1,7 @@
 # Cover-page
 The page is a customized css page
 
-![screenshot](/img/natours1.png)
+![screenshot](/img/cover.png)
 
 
 ## Built With 🧰
